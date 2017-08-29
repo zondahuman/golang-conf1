@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"golang-conf1/constant"
 	"github.com/widuu/goini"
-	"apricotforest-go-framework/src/qiniupkg.com/api.v7/conf"
 )
 
 //引入数据模型
@@ -18,7 +17,7 @@ func init() {
 
 	constant.GlobalConfName = *confName
 	fmt.Println("GlobalConfName....:", constant.GlobalConfName)
-	conf := goini.SetConfig("./conf/conf.ini") //goini.SetConfig(filepath) 其中filepath是你ini 配置文件的所在位置
+	conf := goini.SetConfig("./conf/"+constant.GlobalConfName) //goini.SetConfig(filepath) 其中filepath是你ini 配置文件的所在位置
 	constant.GlobalConf = *conf
 	fmt.Println("GlobalConf....:", constant.GlobalConf)
 
