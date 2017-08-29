@@ -9,7 +9,7 @@ Program arguments: -confName="dev"
 
 go run flag.go -id=2 -name="golang"
 
-
+go run main.go -confName="dev"
 
 
 
