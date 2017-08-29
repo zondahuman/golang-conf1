@@ -1,0 +1,41 @@
+package main
+
+import (
+	"flag"
+	"fmt"
+	"golang-conf1/constant"
+	"github.com/widuu/goini"
+	"apricotforest-go-framework/src/qiniupkg.com/api.v7/conf"
+)
+
+//引入数据模型
+func init() {
+	confName := flag.String("confName", "golang-dev.ini", "this is conf name")
+
+
+	flag.Parse()
+	fmt.Println("confName:", *confName)
+
+	constant.GlobalConfName = *confName
+	fmt.Println("GlobalConfName....:", constant.GlobalConfName)
+	conf := goini.SetConfig("./conf/conf.ini") //goini.SetConfig(filepath) 其中filepath是你ini 配置文件的所在位置
+	constant.GlobalConf = *conf
+	fmt.Println("GlobalConf....:", constant.GlobalConf)
+
+}
+
+func main() {
+
+	username := constant.GlobalConf.GetValue("nihao", "username")
+	fmt.Println("username---:", username)
+
+
+}
+
+
+
+
+
+
+
+
