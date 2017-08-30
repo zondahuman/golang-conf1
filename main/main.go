@@ -6,6 +6,7 @@ import (
 	"golang-conf1/constant"
 	"github.com/widuu/goini"
 	"runtime"
+	"strings"
 )
 
 //引入数据模型
@@ -15,13 +16,18 @@ func init() {
 	flag.Parse()
 	fmt.Println("confName:", *confName)
 	fmt.Println("current operatesystem....:", runtime.GOOS)
-
 	constant.GlobalConfName = "golang-"+*confName+".ini"
 	fmt.Println("GlobalConfName....:", constant.GlobalConfName)
-	conf := goini.SetConfig("../conf/"+constant.GlobalConfName) //goini.SetConfig(filepath) 其中filepath是你ini 配置文件的所在位置
+	var confPath string = ""
+	operateSystem := runtime.GOOS
+	if strings.EqualFold(operateSystem, constant.LINUX) {
+		confPath = "../conf/" + constant.GlobalConfName
+	}else {
+		confPath = "./conf/" + constant.GlobalConfName
+	}
+	conf := goini.SetConfig(confPath) //goini.SetConfig(filepath) 其中filepath是你ini 配置文件的所在位置
 	constant.GlobalConf = *conf
 	fmt.Println("GlobalConf....:", constant.GlobalConf.ReadList())
-
 }
 
 func main() {
