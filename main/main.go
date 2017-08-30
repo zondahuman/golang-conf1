@@ -11,7 +11,6 @@ import (
 func init() {
 	confName := flag.String("confName", "local", "this is conf name")
 
-
 	flag.Parse()
 	fmt.Println("confName:", *confName)
 
@@ -24,11 +23,8 @@ func init() {
 }
 
 func main() {
-
 	username := constant.GlobalConf.GetValue("nihao", "username")
 	fmt.Println("username---:", username)
-
-
 }
 
 
