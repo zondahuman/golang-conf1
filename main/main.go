@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"golang-conf1/constant"
 	"github.com/widuu/goini"
+	"runtime"
 )
 
 //引入数据模型
@@ -13,6 +14,7 @@ func init() {
 
 	flag.Parse()
 	fmt.Println("confName:", *confName)
+	fmt.Println("current operatesystem....:", runtime.GOOS)
 
 	constant.GlobalConfName = "golang-"+*confName+".ini"
 	fmt.Println("GlobalConfName....:", constant.GlobalConfName)
