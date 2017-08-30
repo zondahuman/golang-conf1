@@ -24,6 +24,7 @@ go get github.com/mailgun/godebug
 go install   github.com/mailgun/godebug
 
 
+go get github.com/syndtr/goleveldb/leveldb
 
 
 
