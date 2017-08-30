@@ -13,10 +13,12 @@ Program arguments: -confName="dev"
 go run flag.go -id=2 -name="golang"
 
 go run main.go -confName="dev"
+
 godebug run main.go -confName="dev"
 
 
 go get github.com/mailgun/godebug
+
 go install   github.com/mailgun/godebug
 
 
