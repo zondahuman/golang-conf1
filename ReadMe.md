@@ -5,6 +5,9 @@ https://studygolang.com/articles/4682
 http://www.widuu.com/archives/02/961.html
 
 
+go get github.com/widuu/goini
+
+
 Program arguments: -confName="dev"
 
 go run flag.go -id=2 -name="golang"
